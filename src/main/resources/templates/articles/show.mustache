@@ -1,0 +1,14 @@
+{{>layouts/header}}
+{{#article}}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{id}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{title}}</h6>
+            <p class="card-text">{{content}}</p>
+            <a class="btn btn-primary" href="#" role="button">수정</a>
+            <a class="btn btn-primary" href="#" role="button">삭제</a>
+            <a class="btn btn-primary" href="#" role="button">목록</a>
+        </div>
+    </div>
+{{/article}}
+{{>layouts/footer}}
