@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -24,6 +25,14 @@ public class ArticleController {
 
     public ArticleController(ArticleRepository articleRepository) {
         this.articleRepository = articleRepository;
+    }
+
+    // list 구현 -> 목록보기
+    @GetMapping("/list")
+    public String findAll(Model model){
+        List<Article> articles =  articleRepository.findAll(); // DB에서 모든 데이터를 가져와 list에 담는다.
+        model.addAttribute("articles", articles);
+        return "articles/list";
     }
 
     // findById 사용하여 show 페이지 만들기 -> 작성한 게시글 보기

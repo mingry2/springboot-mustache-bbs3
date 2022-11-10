@@ -1,0 +1,21 @@
+{{>layouts/header}}
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Content</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#articles}}
+            <tr>
+                <th scope="row">{{id}}</th>
+                <td>{{title}}</td>
+                <td>{{content}}</td>
+            </tr>
+        {{/articles}}
+        </tbody>
+    </table>
+    <a class="btn btn-primary" href="/articles/new" role="button">새 글작성</a>
+{{>layouts/footer}}
